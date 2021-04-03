@@ -1,0 +1,205 @@
+accessible: true
+author: ''
+categories: []
+contact_url: ''
+context: |+
+    ตัวดำเนินการถูกแบ่งออกเป็น 2 ประเภทอย่างง่ายๆ คือ
+
+    1. Unary Operator หมายถึงตัวดำเนินการที่มีการทำงานกับค่าเพียง 1 ค่า เช่น - + not ดังตัวอย่าง ``-1`` ``+52`` หรือ ``not True`` เป็นต้น
+    2. Binary Operator หมายถึงตัวดำเนินการที่ทำงานกับค่า 2 ค่า เช่น + - * / % ** เช่น 5+2 10**2 เป็นต้น
+
+
+    ประเภทของตัวดำเนินงานในภาษาไพทอนถูกแบ่งออกเป็นประเภทใหญ่ๆ ได้ดังนี้
+
+    1. Artihmetic Operators
+    2. Comparison (Relational) Operators
+    3. Assignment Operators
+    4. Logical Operators
+    5. Bitwise Operators
+    6. Membership Operators
+    7. Identity Operators
+
+
+    สามารถศึกษารายละเอียดเพิ่มเติมได้จากลิงค์ https://www.tutorialspoint.com/python3/python_basic_operators.htm
+
+
+    คำสั่งและนิพจน์ (Statement and Expression)
+    ===============================================
+
+    A statement is an instruction that the Python interpreter can execute. We have only seen the assignment statement so far. Some other kinds of statements that we’ll see shortly are while statements, for statements, if statements, and import statements. (There are other kinds too!)
+
+    An expression is a combination of values, variables, operators, and calls to functions. Expressions need to be evaluated. If you ask Python to print an expression, the interpreter evaluates the expression and displays the result.
+
+    ``คำสั่ง`` หมายถึง คำสั่งที่บอกให้ไพทอนทำงาน เช่น การกำหนดค่า การทำซ้ำ คำสั่งแบบทางเลือก คำสั่งการนำไลบรารี่เข้ามาใช้งาน ฯลฯ ซึ่งจะได้พบเจอในเนื้อหาถัดๆ ไป
+
+    ``นิพจน์`` หมายถึงการรวมกันของค่า ตัวแปร ตัวดำเนินการ และ การเรียกใช้ฟังก์ชัน (เช่น ฟังก์ชัน ``type``) ไพทอนจะทำการอ่านและประเมินค่าของนิพจน์นั้นๆ และแปลงเป็นค่าที่มีชนิดข้อมูลตามการดำเนินการของตัวดำเนินการนั้นๆ ต่อๆป ซึ่งโดยทั่วไปใน ``IDLE`` ก็จะแสดงค่าออกมาด้านล่าง แต่ถ้าเป็นการคำนวณต่อเนื่องเช่น  ``1*2 + 3*4`` ไพทอนจะค่อยๆ แปลงค่าตามนิพจน์และลำดับการดำเนินการดังนี้
+
+      1. ประมินค่านิพจน์ ``1*2`` และ ``3*4`` ตามลำดับได้ดังนี้ ``2`` และ ``12`` จากนั้นจึงนำค่าไปแทน นิพจน์เดิม ได้ ``2 + 12``
+      2. ประเมินค่านิพจน์ ``2+12`` ได้ ``14``
+      3. 14 จึงถูกแสดงค่าออกมาใน IDLE หรือถูกใช้ในการกำหนดค่าที่ตัวแปรอื่นๆ (เนื้อหาถัดไป) ต่อไป
+
+    **ตัวอย่าง** ค่าหรือข้อมูลเฉยๆ ก็เป็นนิพจน์ เพราะ Python สามารถเข้าใจและตีความได้
+
+    .. code::
+
+        10
+        "Hello"
+        'World'
+        15.6
+        True
+
+    เมื่อเอาไปรันใน IDLE จะได้ผลลัพธ์ดังนี้
+
+    .. code:: IPython
+
+        >>> 10
+        10
+        >>> "Hello"
+        "Hello"
+        >>> 'World'
+        "World"
+        >>> 15.6
+        15.6
+        >>> True
+        True
+
+environment_id: mcq
+environment_parameters: {}
+environment_type: mcq
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: ตัวดำเนินการและนิพจน์
+network_grading: false
+problems:
+    p1:
+        type: multiple_choice
+        name: ข้อความใดต่อไปนี้เป็นจริง
+        header: ตัวดำเนินการด้านล่างนี้ เป็นตัวดำเนินการที่เกี่ยวข้องกับ Arithmetic
+            เท่านั้น
+        multiple: true
+        limit: 0
+        choices:
+        -   text: สำหรับตัวดำเนินการทางตัวเลข (Arithmetic) ผลลัพธ์ที่ได้ส่วนใหญ่จะมีชนิดข้อมูลเป็น
+                float ถ้า operand ตัวใดตัวหนึ่งมีชนิดข้อมูลเป็น float
+            valid: true
+        -   text: ตัวดำเนินการทางตัวเลข / จะให้ผลลัพธ์เป็น float เสมอ
+            valid: true
+        -   text: ตัวดำเนินการ // หมายถึงการหารโดยปัดเศษทศนิยมทิ้ง โดยให้ผลลัพธ์มีชนิดข้อมูลเป็น
+                float
+        -   text: '** หมายถึงการ คูณ'
+        -   text: '% ให้ผลลัพธ์เป็นเศษทศนิยม'
+    p10:
+        type: multiple_choice
+        name: '"Hello" + "World" ได้ผลลัพธ์เป็นอะไร'
+        header: ''
+        limit: 0
+        choices:
+        -   text: '"HelloWorld"'
+            valid: true
+        -   text: '"Hello World"'
+        -   text: '"Helloworld"'
+        -   text: '"helloworld"'
+    p11:
+        type: multiple_choice
+        name: '"Abc" * 3 ได้ผลลัพธ์เป็นอะไร'
+        header: ''
+        limit: 0
+        choices:
+        -   text: '''AbcAbcAbc'''
+            valid: true
+        -   text: '''abcabcabc'''
+        -   text: '''Abc3'''
+    p2:
+        type: multiple_choice
+        name: ตัวดำเนินการใดหมายถึง "น้อยกว่าหรือเท่ากับ"
+        header: ''
+        limit: 0
+        choices:
+        -   text: '>='
+        -   text: '>'
+        -   text: <
+        -   text: <=
+            valid: true
+    p3:
+        type: multiple_choice
+        name: ผลลัพธ์ของ 100/25 คือเท่าใด
+        header: ''
+        limit: 0
+        choices:
+        -   text: '4'
+        -   text: '4.0'
+            valid: true
+        -   text: '"4.0"'
+        -   text: '''4.0'''
+    p4:
+        type: multiple_choice
+        name: ข้อใดใช้ตัวดำเนินการตามนิพจน์ทางคณิตศาสตร์ได้ถูกต้อง
+        header: |-
+            .. math::
+
+                {x}^{y}
+        limit: 0
+        choices:
+        -   text: x*y
+        -   text: x**y
+            valid: true
+        -   text: x^y
+        -   text: x^^y
+    p5:
+        type: multiple_choice
+        name: ข้อใดหมายถึงการหารแบบปัดทศนิยมทิ้ง
+        header: ''
+        limit: 0
+        choices:
+        -   text: /
+        -   text: //
+            valid: true
+        -   text: '%'
+        -   text: ไม่มีคำตอบ
+    p6:
+        type: multiple_choice
+        name: จงเลือกคำตอบที่ถูกต้อง
+        header: |-
+            ถ้า x = 5 แล้ว
+            x >3 and x< 10 ได้ผลลัพธ์เป็นอะไร
+        limit: 0
+        choices:
+        -   text: 'True'
+            valid: true
+        -   text: 'False'
+    p7:
+        type: multiple_choice
+        name: จงเลือกคำตอบที่ถูกต้อง
+        header: |-
+            ถ้า x = 10 แล้ว
+            x>3 and x<9 ได้ผลลัพธ์เป็นอะไร
+        limit: 0
+        choices:
+        -   text: 'True'
+        -   text: 'False'
+            valid: true
+    p8:
+        type: multiple_choice
+        name: 5 == 5 ได้ผลลัพธ์เป็นอะไร
+        header: ''
+        limit: 0
+        choices:
+        -   text: 'True'
+            valid: true
+        -   text: 'False'
+    p9:
+        type: multiple_choice
+        name: not 10 != 10 ได้ผลลัพธ์เป็นอะไร
+        header: ''
+        limit: 0
+        choices:
+        -   text: 'True'
+            valid: true
+        -   text: 'False'
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

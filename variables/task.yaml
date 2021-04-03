@@ -1,0 +1,76 @@
+accessible: true
+author: ''
+categories: []
+contact_url: ''
+context: |
+    ตัวแปรในภาษาไพทอนเป็นเพียงชื่อที่ใช้สำหรับชี้ไปยังข้อมูล หรือใช้แทนข้อมูล
+    โดยชื่อตัวแปรในภาษาไพทอนไม่ได้แตกต่างจากภาษาอื่นๆ มากนัก โดยมีข้อกำหนดดันี้
+
+    1. ตัวอักษรตัวแรก จะต้องเป็น ตัวอักษรหรือ ``_`` เท่านั้น
+    2. ตัวอักษรตัวถัดไปสามารถเป็น ตัวอักษร ตัวเลข _ ได้เท่านั้น
+
+    เช่น
+
+    .. code ::
+
+        x   y  z
+        _a  _b _c
+        x1 x2 x3
+        john_name
+        john_school_1
+
+    เราสามารถกำหนดค่าให้กับตัวแปรได้โดยใช้เครื่องหมาย ``=``
+
+    .. code ::
+
+        x = 10
+        y = 20.15
+        school = "MIT"
+        today_is_friday = False
+        selected_charactor = None
+
+
+    นอกจากนี้เรายังสามารถกำหนดค่าให้กับตัวแปร จากการดำเนินการ (นิพจน์) ได้อีก เช่น
+
+    .. code :: python3
+
+        x = 10
+        y = 20
+        z = x + y  # z->30
+
+        x = 15    # redefined กำหนดค่าให้กับตัวแปรเดิมก็ได้
+        z = x + y # z -> 35
+environment_id: python3
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: ตัวแปรและการกำหนดค่า
+network_grading: false
+problems:
+    p1:
+        type: code
+        name: จงเขียนคำสั่ง (นิพจน์) เพื่อคำนวณค่าดังต่อไปนี้
+        header: |-
+            สมมติว่าเราต้องการคำนวณพื้นที่ของรูป 3 เหลี่ยม ซึ่งสามารถคำนวณได้จากสูตร
+
+            .. math ::
+
+                Area = \frac{1}{2} * {height} * {width}
+
+            กำหนดให้ตัวแปร ``h`` เก็บค่าความสูง ``height`` และตัวแปร ``w`` เก็บค่าความยาวฐาน ``width``
+            จงเขียนคำสั่งเพื่อคำนวณค่าพื้นที่ของรูป 3 เหลี่ยม เพื่อเก็บไว้ที่ตัวแปร ``a``
+        language: python3
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

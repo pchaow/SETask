@@ -1,0 +1,32 @@
+accessible: false
+name: อบรมระบบประเมินผลอัตโนมัติ
+description: คอร์สตัวอย่างโจทย์สำหรับการอบรม
+admins: []
+tutors: []
+groups_student_choice: false
+allow_unregister: true
+allow_preview: false
+registration: true
+registration_password: null
+registration_ac: null
+registration_ac_list:
+- '  '
+is_lti: false
+lti_url: ''
+lti_keys: {}
+lti_send_back_grade: false
+task_dispenser: toc
+dispenser_data:
+-   config:
+        closed: false
+    id: tasks-list
+    rank: 0
+    tasks_list:
+        basic_data_types: 0
+        if_basic: 6
+        input_basic: 4
+        operators: 1
+        print_basic: 3
+        type_conversion_basic: 5
+        variables: 2
+    title: Basic Content

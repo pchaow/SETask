@@ -1,0 +1,55 @@
+accessible: false
+author: ''
+categories: []
+contact_url: ''
+context: |+
+    บางครั้งโปรแกรมของเราอาจจะมีการปฏิบัติตามเงื่อนไขบางอย่าง เช่น ปกติแล้วเราตื่นนอนแล้วก็ไปกินข้าวจากนั้นไปโรงเรียน แต่ถ้าเป็นวันที่ฝนตกเราก็จะหยิบร่มไปด้วย จากการทำงานนี้สามารถใช้ if โดยเขียนเป็นรหัสเทียม (ที่คลายภาษาไพทอน) ได้ดังนี้
+
+    .. code::
+
+       ตื่นนอน
+       if วันนี้ฝนตก :
+           หยิบร่ม
+       ไปโรงเรียน
+
+
+    if statement
+    ===============
+
+    รูปแบบของ คำสั่ง if มีรูปแบบดังนี้
+
+    .. code:: python3
+
+        if condition :
+            statement(s)
+
+    จากรูปแบบข้างต้น หาก condition มีค่าเป็นจริงแล้ว statement(s) ที่อยู่ด้านในที่มีการย่นระยะเข้าไป  (indent) จะถูกทำงาน
+
+
+    **ตัวอย่าง** โปรแกรมการหารเลขสองจำนวน :math:`{A} \div {B}`
+
+    ..  code:: python3
+
+        a = float(input("A = "))
+        b = float(input("B = "))
+
+        if b != 0 :
+            print(a/b)
+
+
+environment_id: mcq
+environment_parameters: {}
+environment_type: mcq
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: การเขียนโปรแกรมแบบมีเงื่อนไข 1
+network_grading: false
+problems: {}
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
+...

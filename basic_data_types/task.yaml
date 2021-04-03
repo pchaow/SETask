@@ -1,0 +1,180 @@
+accessible: true
+author: ''
+categories: []
+contact_url: ''
+context: |+
+    วัตถุ (Object) หรือ ข้อมูล (Data) คือหน่วยที่เล็กที่สุดที่ไพทอนสามารถเข้าใจได้ เมื่อเราพิมพ์ อะไรลงไปใน ``idle`` ไพทอนจะสามารถตอบสิ่งนั้นออกมาได้
+    แต่ถ้าสิ่งที่เราพิมพืลงไปไพทอนไม่สามารถเข้าใจได้ ไพทอนจะแจ้งข้อผิดพลาดออกมา
+
+    ภาษาไพทอนมีชนิดข้อมูลพื้นฐาน 5 ชนิดได้แก่
+
+    1. ``int`` แทนเลขจำนวนเต็ม เช่น -5 4 0 เป็นต้น
+    2. ``float`` แทนเลขทศนิยม เช่น 67.5 -1.4 0.124 เป็นต้น
+    3. ``bool`` แทนค่าความจริง มีเพียง 2 ค่าได้แก่ True และ False
+    4. ``None`` แทนความว่าง (ไม่มี) มีเพียง 1 ค่าได้แก่ None
+    5. ``str`` (string, สตริง) แทนข้อความ โดยข้อมูลที่เป็น str จะต้องมีเครื่องหมาย " หรือ '  หรือ """ หรือ ''' อย่างใดอย่างหนึ่งครอบข้อความไว้ เช่น "Hello World" "1999" 'กรุงเทพฯ' เป็นต้น
+
+
+    Function type(x)
+    -----------------
+
+
+    ฟังก์ชัน type(x) เป็นฟังก์ชันที่รับพารามิเตอร์ x แล้วจะบอกชนิดข้อมูลของ x ออกมา
+    ซึ่งประโยคข้างต้นนี้สามารถเขียนนิยามโดยใช้สัญลักษณ์ทางคณิตศาสตร์ได้ง่ายๆ ดังนี้
+
+    .. code-block::
+
+       type(x) -> "data type of x"
+
+
+    เช่น
+
+    .. code-block::
+
+        type(1) -> <class 'int'>
+
+    หรืออาจจะเขียนง่ายได้ว่า
+
+
+    .. code-block::
+
+       type(1)    -> int
+       type(10.5) -> float
+       type(True) -> bool
+       type(None) -> None
+       type("14") -> str
+
+
+    แบบฝึกหัด : ฝึกฝนการใช้ idle และ type(x) เพื่อดูค่าและตรวจสอบชนิดข้อมูล
+    ----------------------------------------------------------------------
+
+
+environment_id: mcq
+environment_parameters: {}
+environment_type: mcq
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: วัตถุ ข้อมูล และชนิดข้อมูล
+network_grading: false
+problems:
+    p1:
+        type: multiple_choice
+        name: จงเลือกคำตอบทุกคำตอบที่มีชนิดข้อมูลเป็น int
+        header: ''
+        multiple: true
+        limit: 0
+        choices:
+        -   text: '1'
+            valid: true
+        -   text: '0x123'
+            valid: true
+        -   text: 0o0123
+            valid: true
+        -   text: '0b1101'
+            valid: true
+        -   text: '"12.5"'
+            feedback: อันนี้ชนิดข้อมูลเป็น str
+        -   text: '12.0'
+            feedback: อันนี้ชนิดข้อมูลเป็น float
+        -   text: '14'
+            valid: true
+        -   text: '"14"'
+            feedback: อันนี้ชนิดข้อมูลเป็น str
+        -   text: Twelve
+            feedback: อันนี้ตอบไม่ได้ว่าชนิดข้อมูลคืออะไร
+        -   text: '"Twelve"'
+    p2:
+        type: multiple_choice
+        name: จงเลือกคำตอบทุกคำตอบที่มีชนิดข้อมูลเป็น float
+        header: ''
+        multiple: true
+        limit: 0
+        choices:
+        -   text: '12.5'
+            valid: true
+        -   text: '19.'
+            valid: true
+        -   text: '19'
+        -   text: '"19.4"'
+        -   text: 0x123.FF
+            feedback: ไม่สามารถทำได้
+    p3:
+        type: multiple_choice
+        name: จงเลือกคำตอบที่มีชนิดข้อมูลเป็น bool
+        header: ''
+        multiple: true
+        limit: 0
+        choices:
+        -   text: 'True'
+            valid: true
+        -   text: 'False'
+            valid: true
+        -   text: 'true'
+        -   text: 'false'
+        -   text: 'TRUE'
+        -   text: 'FALSE'
+    p4:
+        type: multiple_choice
+        name: ประโยคใดต่อไปนี้สามารถใช้ข้อมูลที่มีชนิดข้อมูลเป็น bool ได้อย่างถูกต้องและเหมาะสม
+        header: ''
+        multiple: true
+        limit: 0
+        choices:
+        -   text: บนโต๊ะของนักเรียนมีสิ่งของรวมไม่เกิน 10 ชิ้น
+            feedback: เราสามารถบอกได้ว่าประโยคดังกล่าวเป็นจริงหรือเป็นเท็จ จึงสามารถใช้
+                bool แทนค่าความจริงของประโยคนี้ได้
+            valid: true
+        -   text: สินค้าหมด
+            feedback: เราสามารถบอกได้ว่าประโยคดังกล่าวเป็นจริงหรือเป็นเท็จ จึงสามารถใช้
+                bool แทนค่าความจริงของประโยคนี้ได้
+            valid: true
+        -   text: จงบอกเพศของคุณ
+            feedback: |-
+                เพศโดยพื้นฐานแบ่งออกเป็น ชาย / หญิง การใช้ bool ซึ่งมี True/False จึงอาจจะไม่สามารถแทนได้อย่างชัดเจนเพราะไม่สามารถบอกได้ว่า True = ชาย หรือ False = หญิง
+                ปัจจุบันเพศมีจำนนวนมากขึ้นทำให้ True/False ไม่สามารถแทนค่าได้ทั้งหมด
+        -   text: ไปทางซ้ายหรือไปทางขวา
+            feedback: คำตอบที่เป็นไปได้ คือ ซ้าย หรือ ขวา อย่างใดอย่างหนึ่ง การแทนข้อมูลก็ควรระบุให้ชัดเจนเลยว่า
+                ซ้ายหรือขวา True/False จึงไม่เหมาะสม
+    p5:
+        type: multiple_choice
+        name: ประโยคใดสามารถใช้ None แทนค่าได้
+        header: ''
+        multiple: true
+        limit: 0
+        choices:
+        -   text: สมชายไปตลาด เพื่อซื้อผลไม้ 1 อย่าง (เช่น ส้ม แอปเปิ้ล) อย่างไรก็ตามสมชายอาจจะไม่ซื้ออะไรเลยก็ได้
+            valid: true
+        -   text: ในตอนแรกผู้ใช้ยังไม่ได้เลือกตัวละครใดๆ แต่สามารถลือกตัวละครได้ภายหลัง
+            valid: true
+        -   text: "บนโต๊ะของนักเรียน ไม่มี ผลไม้อยู่เลยซักลูก\t"
+            feedback: แม้ว่าจะใช้ None แทนได้แต่จำนวนผลไม้ใช้ 0 จะดีกว่า
+        -   text: ในกระเป๋าสตางค์ของนักเรียนไม่มีเงินเลยแม้แต่บาทเดียว
+            feedback: แม้ว่าจะใช้ None แทนได้แต่จำนวนผลไม้ใช้ 0 จะดีกว่า
+    p6:
+        type: multiple_choice
+        name: จงเลือกตัวเลือกที่มีชนิดข้อมูลเป็น str ที่ถูกต้อง
+        header: ''
+        multiple: true
+        limit: 0
+        choices:
+        -   text: '"Hello World"'
+            valid: true
+        -   text: '''Hello World'''
+            valid: true
+        -   text: '"""Hello World"""'
+            valid: true
+        -   text: '''''''Test 12345'''''''
+            valid: true
+        -   text: '"14.652"'
+            valid: true
+        -   text: '"Hell'
+        -   text: '"World'''
+        -   text: '''Got''s It'''
+        -   text: '"""This is a book'''''''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

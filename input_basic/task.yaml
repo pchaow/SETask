@@ -1,0 +1,100 @@
+accessible: false
+author: ''
+categories: []
+contact_url: ''
+context: |
+    การรับค่าถือว่าเป็น 1 ปัจจัยพื้นฐานในการเขียนโปรแกรมคอมพิวเตอร์ ไพทอนมีฟังก์ชัน ``input`` ที่ใช้สำหรับการรับค่าผ่านทางคีย์บอร์ด
+    ซึ่งมีนิยาม 2 นิยามดังนี้
+
+    .. code::
+
+        input() -> str
+        input(prompt) -> str
+
+    จาก 2 นิยามข้างต้น สามารถเขียนย่อรวมเหลือเพียง 1 นิยามได้ ดังนี้
+
+    .. code::
+
+        input([prompt]) -> str
+
+    จากนิยามของ ฟังก์ชัน ``input`` ฟังก์ชันทำงานโดยแสดข้อความ ``prompt`` ออกทางจอภาพเพื่อใช้เป็นข้อความสำหรับบอกผู้ใช้ว่าควรจะกรอกข้อมูลอะไร จากนั้นเมื่อผู้ใช้กรอกข้อมูลแล้วกด ``Enter`` ข้อความดังกล่าวจะถือว่าเป็นผลลัพธ์ของฟังก์ชัน (``นิพจน์``) ซึ่งมีชนิดข้อมูลเป็น ``str``
+
+
+    .. code:: IPython
+
+        >>> input()
+        Hello
+        'Hello'
+
+        >> input()
+        13.51
+        '13.51'
+
+    จากตัวอย่างข้างต้นเห็นได้ว่าทันทีที่เราพิมพ์ข้อความแล้วกด Enter ไพทอนจะแสดงค่า ที่มีชนิดข้อมูลเป็น ``str`` ออกมาให้เห็นทันที
+    อย่างไรก็ตามเราสามารถนำผลลัพธ์ของฟังก์ชัน ``input`` ไปเก็บไว้ในตัวแปร เพื่อใช้ในอนาคตได้ดังตัวอย่างต่อไปนี้
+
+
+    .. code:: Ipython
+
+        >>> name = input("What is your name? ")
+        What is your name? John
+        >>> name
+        'John'
+        >> age = input("How old are you? ")
+        How old are you? 34
+        >>> age
+        '34'
+environment_id: python3
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: การรับค่า
+network_grading: false
+problems:
+    p1:
+        type: code
+        name: โปรแกรมแนะนำตัว
+        header: |-
+            เขียนโปรแกรมเพื่อรับค่า ชื่อ และ ประเทศ จากนั้นให้แสดงข้อความ ตามรูปแบบด้านล่าง
+
+            My name is <yourname>. I come from <country>
+
+            โดยโปรแกรมจะต้องทำงานตามตัวอย่างต่อไปนี้
+
+            .. code::
+
+                Enter Your name : John
+                Enter Your Contry : USA
+                My name is John. I came from USA
+
+
+            **หมายเหตุ** เราสามารถใช้ format-string (f-string) เพื่อแสดงผลตามรูปแบบได้ ดังตัวอย่าง
+
+            .. code:: python
+
+                a = "Robert"
+                b = "UK"
+                print(f"My name is {a}. I came from {b}")
+
+            ซึ่งได้ผลลัพธ์ดังนี้
+
+            .. code::
+
+                My name is Robert. I came from UK
+
+            โดยที่ a และ b เป็นตัวแปรที่เก็บค่าชื่อและประเทศตามลำดับ โดยอาจจะเปลี่ยนชื่อตัวแปรให้เหมาะสม
+        language: ''
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
