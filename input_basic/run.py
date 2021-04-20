@@ -53,16 +53,14 @@ score += checkAnswer("p1",template="template1.py",studentfile="student/p1.py",te
 
 #calculate total score
 if score == total_score :
-    feedback.set_grade(1)
+    feedback.set_grade(100)
     feedback.set_global_result("success") 
     feedback.set_global_feedback("""All Correct. Well done!""")
     
 else :
-    feedback.set_grade(score/total_score)
+    feedback.set_grade(score/total_score * 100)
     feedback.set_global_result("failed") 
     
     feedback.set_global_feedback(
     """There are something wrong.
     Try again!!.""")
-
-
