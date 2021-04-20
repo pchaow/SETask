@@ -1,5 +1,5 @@
-accessible: false
-name: อบรมระบบประเมินผลอัตโนมัติ
+accessible: true
+name: '[PYTHON101] ภาษาไพทอนพื้นฐาน'
 description: คอร์สตัวอย่างโจทย์สำหรับการอบรม
 admins: []
 tutors: []
@@ -8,9 +8,9 @@ allow_unregister: true
 allow_preview: false
 registration: true
 registration_password: null
-registration_ac: null
+registration_ac: username
 registration_ac_list:
-- '  '
+- demo
 is_lti: false
 lti_url: ''
 lti_keys: {}

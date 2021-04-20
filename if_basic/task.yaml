@@ -3,7 +3,7 @@ author: ''
 categories: []
 contact_url: ''
 context: |+
-    บางครั้งโปรแกรมของเราอาจจะมีการปฏิบัติตามเงื่อนไขบางอย่าง เช่น ปกติแล้วเราตื่นนอนแล้วก็ไปกินข้าวจากนั้นไปโรงเรียน แต่ถ้าเป็นวันที่ฝนตกเราก็จะหยิบร่มไปด้วย จากการทำงานนี้สามารถใช้ if โดยเขียนเป็นรหัสเทียม (ที่คลายภาษาไพทอน) ได้ดังนี้
+    บางครั้งโปรแกรมของเราอาจจะมีการปฏิบัติตามเงื่อนไขบางอย่าง เช่น ปกติแล้วเราตื่นนอนแล้วก็ไปกินข้าวจากนั้นไปโรงเรียน แต่ถ้าเป็นวันที่ฝนตกเราก็จะหยิบร่มไปด้วย จากการทำงานนี้สามารถใช้ if โดยเขียนเป็นรหัสเทียม (ที่คล้ายภาษาไพทอน) ได้ดังนี้
 
     .. code::
 
@@ -37,16 +37,30 @@ context: |+
             print(a/b)
 
 
-environment_id: mcq
-environment_parameters: {}
-environment_type: mcq
+    จากตัวอย่างข้างต้นนี้หาก b มีค่าเป็น 0 แล้วโปรแกรมนี้ไม่ได้มีผลลัพธ์อะไรแสดงออกมา
+    แต่ถ้า b มีค่าไม่เท่ากับ 0 โปรแกรมก็จะแสดงผลหารของ a/b ออกทางจอภาพ
+
+environment_id: python3
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
 evaluate: best
 file: ''
 groups: false
 input_random: '0'
 name: การเขียนโปรแกรมแบบมีเงื่อนไข 1
 network_grading: false
-problems: {}
+problems:
+    p1:
+        type: code
+        name: ''
+        header: ''
+        language: ''
+        default: ''
 stored_submissions: 0
 submission_limit:
     amount: -1
