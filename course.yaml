@@ -24,9 +24,16 @@ dispenser_data:
     tasks_list:
         basic_data_types: 0
         if_basic: 6
+        if_basic2: 7
         input_basic: 4
         operators: 1
         print_basic: 3
         type_conversion_basic: 5
         variables: 2
-    title: Basic Content
+    title: เนื้อหาพื้นฐาน
+-   config:
+        closed: false
+    id: ''
+    rank: 1
+    tasks_list: {}
+    title: แบบฝึกหัด

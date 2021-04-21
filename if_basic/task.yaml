@@ -56,7 +56,7 @@ evaluate: best
 file: ''
 groups: false
 input_random: '0'
-name: การเขียนโปรแกรมแบบมีเงื่อนไข 1
+name: 'การเขียนโปรแกรมแบบมีเงื่อนไข 1 - if '
 network_grading: false
 problems:
     p1:

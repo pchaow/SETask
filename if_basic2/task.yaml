@@ -1,0 +1,129 @@
+accessible: true
+author: ''
+categories: []
+contact_url: ''
+context: |+
+    ในกรณีที่เราต้องการให้โปรแกรมของเราทำงาน 2 ลักษณะจากเงื่อนไขเพียงเงื่อนไขเดียวนั้นเราสามารถใช้คำสั่ง ``else`` เพื่อสร้างการทำงานเมื่อเงื่อนไขใน if นั้นไม่เป็นจริงได้
+
+    .. code::
+
+        if เงื่อนไข :
+            การทำงานเมื่อเงื่อนไขเป็นจริง
+        else :
+            การทำงานเมื่อเงื่อนไขเป็นเท็จ
+
+
+    **ตัวอย่าง**
+
+    โปรแกรมด้านล่างนี้จะแสดงค่าสัมบูรณ์ของ x เมื่อรับค่า x ผ่านทางคีย์บอร์ด
+
+    .. code:: python
+
+        x = float(input("Enter Number : "))
+        if x < 0 :
+            print(-x)
+        else :
+            print(x)
+
+        print("End Program")
+
+
+    ซึ่งสามารถเขียนเป็นผังงานได้ดังนี้
+
+
+    .. dot:: png
+        :width: 300
+        :height: 400
+
+        digraph G {
+            start  [label="Start"]
+            stop  [label="Stop"]
+            read_x [shape=parallelogram, label="Read X"]
+            if_x [label="x < 0", shape=diamond]
+            print_neg_x [label="Print -x", shape="parallelogram"]
+            print_pos_x [label="Print x", shape="parallelogram"]
+            print_end_program [label="Print 'End Program'", shape="parallelogram"]
+
+            start->read_x
+            read_x -> if_x
+            if_x -> print_neg_x [label="True"]
+            if_x -> print_pos_x [label="False"]
+
+            print_neg_x -> print_end_program
+            print_pos_x -> print_end_program
+
+            print_end_program -> stop
+
+        }
+
+
+    เมื่อเอาโปรแกรมไปรันก็จะได้ผลการทำงานดังนี้
+
+    .. code::
+
+        Enter Number : 45
+        45.0
+        End Program
+        ============================
+        Enter Number : -61
+        61.0
+        End Program
+
+
+environment_id: python3
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: การเขียนโปรแกรมแบบมีเงื่อนไข 2 - if-else
+network_grading: false
+problems:
+    p1:
+        type: code
+        name: การหาร
+        header: |+
+            อย่างที่เรารู้กันว่า การหาร :math:`\frac{a}{b}` นั้นหากค่า b มีค่าเป็น 0 จะถือว่าหารไม่ได้
+
+            ให้เขียนโปรแกรมเพื่อรับค่า a,b เพื่อแสดงผลหารของ :math:`\frac{a}{b}` ออกทางจอภาพ ด้วยทศนิยม 5 ตำแหน่ง
+
+            แต่ถ้า b มีค่าเป็น 0 ให้แสดงข้อความ ``Divide By Zero``
+
+            **Input** : มี 2 บรรทัด
+
+              1. ตัวตั้ง a
+              2. ตัวหาร b
+
+            **Output** : มี 1 บรรทัด
+
+              1. ผลหารทศนิยม 5 ตำแหน่ง หรือ ``Divide by Zero``
+
+            .. table::
+
+                +----------+-------------------+
+                | INPUT    | Output            |
+                +==========+===================+
+                | 5        | 0.50000           |
+                |          |                   |
+                | 10       |                   |
+                +----------+-------------------+
+                | 2        | Divide by Zero    |
+                |          |                   |
+                | 0        |                   |
+                +----------+-------------------+
+
+
+        language: ''
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
+...
