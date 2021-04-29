@@ -8,9 +8,9 @@ allow_unregister: true
 allow_preview: false
 registration: true
 registration_password: null
-registration_ac: username
+registration_ac: null
 registration_ac_list:
-- demo
+- ' demo '
 is_lti: false
 lti_url: ''
 lti_keys: {}
