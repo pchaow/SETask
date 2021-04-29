@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: ''
 categories: []
 contact_url: ''
@@ -99,8 +99,50 @@ context: |+
             print("F")
 
 
+    จากตัวอย่างข้างต้นนี้สามารถเขียนเป็นผังงานได้ดังนี้
+
+    .. dot:: png
+        :height: 600px
+
+        digraph G {
+
+            start [label="Start",shape="oval"]
+            stop  [label="Stop",shape="oval"]
+            read_score [label="Read Score",shape="parallelogram"]
+
+            score_gte_90 [label="Score >= 90",shape="diamond"]
+            score_gte_80 [label="Score >= 80",shape="diamond"]
+            score_gte_50 [label="Score >= 50",shape="diamond"]
+
+            print_a_plus [label="Print 'A+'",shape="parallelogram"]
+            print_a      [label="Print 'A'",shape="parallelogram"]
+            print_p      [label="Print 'P'",shape="parallelogram"]
+            print_f      [label="Print 'F'",shape="parallelogram"]
+
+            connector         [label="",shape="circle"]
+            gte_80_connector  [label="",shape="circle"]
+            gte_50_connector  [label="",shape="circle"]
+
+            start -> read_score
+            read_score -> score_gte_90
+            score_gte_90 -> print_a_plus [label="True"]
+            score_gte_90 -> score_gte_80 [label="False"]
+            score_gte_80 -> print_a      [label="True"]
+            score_gte_80 -> score_gte_50 [label="False"]
+            score_gte_50 -> print_p      [label="True"]
+            score_gte_50 -> print_f      [label="False"]
+
+            print_a -> gte_80_connector
+            print_a_plus -> connector
+            print_p -> gte_50_connector
+            print_f -> gte_50_connector
+            gte_50_connector -> gte_80_connector
+            gte_80_connector -> connector
+
+            connector -> stop
 
 
+        }
 
 
 environment_id: python3

@@ -1,0 +1,109 @@
+accessible: true
+author: ''
+categories: []
+contact_url: ''
+context: |-
+    Nested if คือการที่โปรแกรมมีโครงสร้าง if-elif-else ซ้อนเข้าไปในโครงสร้าง if elif หรือ else ได้ดังตัวอย่าง
+
+    .. code:: python
+
+        num = float(input("Enter a number: "))
+        if num >= 0:
+            if num == 0:
+                print("Zero")
+            else:
+                print("Positive number")
+        else:
+            print("Negative number")
+
+
+    จากโปรแกรมข้างต้นสามารถเขียนผังงานได้ดังนี้
+
+    .. dot:: png
+        :height: 600px
+
+        digraph G {
+
+           start [label="Start",shape="oval"]
+           read_num [label="Read Num",shape="parallelogram"]
+           if_num_gte_0 [label="Num >= 0",shape="diamond"]
+           if_num_eq_0 [label="Num == 0",shape="diamond"]
+           print_zero [label="Print 'Zero'",shape="parallelogram"]
+           print_pos [label="Positive number'",shape="parallelogram"]
+           print_neg [label="Negative'",shape="parallelogram"]
+           stop [label="Stop",shape="oval"]
+
+           c1 [label="",shape="circle"]
+           c2 [label="",shape="circle"]
+
+           start -> read_num
+           read_num -> if_num_gte_0
+           if_num_gte_0 -> if_num_eq_0 [label="True"]
+           if_num_eq_0 -> print_zero [label="True"]
+           if_num_eq_0 -> print_pos [label="False"]
+           print_zero -> c1
+           print_pos -> c1
+           if_num_gte_0 -> print_neg [laebel="False"]
+           print_neg -> c2
+           c1->c2
+           c2->stop
+
+
+        }
+environment_id: python3
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: การเขียนโปรแกรมแบบมีเงื่อนไข 4 - nested if
+network_grading: false
+problems:
+    p1:
+        type: code
+        name: ค่าใดเยอะที่สุด
+        header: |-
+            ลองฝึกการใช้ nested if เพื่อใช้ในการแก้ปัญหาหาค่าที่มากสุดของเลข 3 จำนวน A,B,C
+            โดยที่ A,B,C เป็นเลขจำนวนเต็มรับค่าผ่านทางคีย์บอร์ด
+
+            **คำแนะนำ**
+
+            ให้ลองคิดโดยอาศัยการตัดสินใจแบบต่อเนื่องดังรูป
+
+
+            .. dot:: png
+                :height: 250px
+
+                digraph G {
+
+                 c1 [label="A>B"]
+                 c2 [label="..."]
+                 c3 [label="..."]
+                 c4 [label="..."]
+                 c5 [label="..."]
+
+
+                 c1 -> c2 [label="True"]
+                 c1 -> c3 [label="False"]
+                 c2 -> c4 [label="True"]
+                 c2 -> c5 [label="False"]
+
+                }
+        language: python
+        default: |
+            A = int(input())
+            B = int(input())
+            C = int(input())
+
+            #write code here
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
