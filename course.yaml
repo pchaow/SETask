@@ -26,6 +26,7 @@ dispenser_data:
         if_basic: 6
         if_basic2: 7
         if_basic3: 8
+        if_basic4: 9
         input_basic: 4
         operators: 1
         print_basic: 3
