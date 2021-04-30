@@ -47,9 +47,7 @@ for i in range(len(inputfiles)) :
         feedback_msg += f"""CASE {i+1} : Error"""
         error_block = rst.get_codeblock("raw",stderr)
         feedback_msg += error_block
-        
-    else :
-        
+    else : 
         if stdout == output_text :
             feedback_msg += f"""CASE {i+1} : correct
 
