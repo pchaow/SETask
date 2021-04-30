@@ -4,7 +4,7 @@
 ตัวอย่างสำหรับ task ที่มี subproblem == 1 
 
 """
-import os
+import os,rst
 from inginious_container_api import feedback, input, run_student
 
 input_dir = 'input'
@@ -42,16 +42,23 @@ for i in range(len(inputfiles)) :
 
     stdout = stdout.strip()
     output_text.strip()
-    
-    if stdout == output_text :
-        feedback_msg += f"""CASE {i+1} : correct
-        
-        """
-    else :
+    if stderr : 
         all_correct = False
-        feedback_msg += f"""CASE {i+1} : incorrect
+        feedback_msg += f"""CASE {i+1} : Error"""
+        error_block = rst.get_codeblock("raw",stderr)
+        feedback_msg += error_block
         
-        """
+    else :
+        
+        if stdout == output_text :
+            feedback_msg += f"""CASE {i+1} : correct
+
+            """
+        else :
+            all_correct = False
+            feedback_msg += f"""CASE {i+1} : incorrect
+
+            """
 
 if all_correct :
     feedback.set_grade(100)
