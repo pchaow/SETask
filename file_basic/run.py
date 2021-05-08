@@ -25,13 +25,16 @@ try :
 
     result = []
     testcases = [
-        1
+        1,2
     ]
     for i in testcases :
         
-        input_text = ""
-        output_text = "4"
-        stdout, stderr, retval = run_student_simple("python3 student/student.py",cmd_input=input_text)
+        input_text = get_text_from_file(f'student/{i}.in')
+        output_text = get_text_from_file(f'student/{i}.out')
+        inputtxt = open('student/input.txt','w')
+        inputtxt.write(input_text)
+        inputtxt.close()
+        stdout, stderr, retval = run_student_simple("python3 student/student.py")
         stdout = stdout.strip()
         result.append(RunResult(input_text,output_text,stdout,stderr))
 
@@ -40,7 +43,7 @@ try :
         set_global_feedback("ถูกต้องครับ",True)
         set_grade(100)
     else :
-        set_global_feedback('failed')
+        set_global_result('failed')
         set_global_feedback("ยังมีที่ผิดอยู่นะ",True)
 
         correctResult = [r for r in result if r.is_correct == True]
@@ -67,11 +70,12 @@ try :
             set_global_feedback(expectedblock, True) # Appends the codeblock to the global feedback
 
 
-            #Error 
-            stderr = get_codeblock("python", r.student_error)
-            set_global_feedback("""**ERROR (Contact Administrator)**""",True)
-            set_global_result('failed')
-            set_global_feedback(stderr, True) # Appends the codeblock to the global feedback
+            if(stderr) :
+                #Error 
+                stderr = get_codeblock("python", r.student_error)
+                set_global_feedback("""**ERROR (Contact Administrator)**""",True)
+                set_global_result('failed')
+                set_global_feedback(stderr, True) # Appends the codeblock to the global feedback
 
             break
 

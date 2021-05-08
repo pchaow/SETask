@@ -39,7 +39,7 @@ try :
         set_global_feedback("ถูกต้องครับ",True)
         set_grade(100)
     else :
-        set_global_feedback('failed')
+        set_global_result('failed')
         set_global_feedback("ยังมีที่ผิดอยู่นะ",True)
 
         correctResult = [r for r in result if r.is_correct == True]
