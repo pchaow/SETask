@@ -23,6 +23,9 @@ dispenser_data:
     rank: 0
     tasks_list:
         basic_data_types: 0
+        file_basic: 13
+        for_basic_01: 11
+        function_basic: 12
         if_basic: 6
         if_basic2: 7
         if_basic3: 8
@@ -30,8 +33,10 @@ dispenser_data:
         input_basic: 4
         operators: 1
         print_basic: 3
+        string_basic: 14
         type_conversion_basic: 5
         variables: 2
+        while_basic_01: 10
     title: เนื้อหาพื้นฐาน
 -   config:
         closed: false

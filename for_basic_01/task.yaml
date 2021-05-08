@@ -1,0 +1,155 @@
+accessible: true
+author: ''
+categories: []
+contact_url: ''
+context: |
+    จากกรณี ``while`` เรามักใช้ ``while`` สำหรับการทำงานแบบวนซ้ำจนกระทั่งบรรลุเงื่อนไขบางอย่าง
+
+    แต่ในกรณีของ ``for`` นั้นเรามักจะใช้ ``for`` สำหรับการวนซ้ำแบบมีจำนวนรอบที่แน่นอน
+
+    ในเบื้องต้นคำสั่ง ``for`` มีรูปแบบดังต่อไปนี้
+
+    .. code:: python
+
+       for variable in range([start,] stop [,step]]) :
+           statement(s)
+
+
+    จากรูปแบบการทำงานของ for ข้างต้นนี้แสดงให้เห็นการทำงาน 3 ลักษณะ ดังนี้
+
+      1. for var in range(stop)
+      2. for var in range(start,stop)
+      3. for var in range(start,stop.step)
+
+    ซึ่งสามารถแสดงตัวอย่างการทำงานได้ดังนี้
+
+
+    for variable in range(stop)
+    ==============================
+
+    พิจารณาการทำงานของโปรแกรม
+
+    .. code:: python
+
+       for i in range(5):
+           print(i)
+
+    จากส่วนของโปรแกรมข้างต้นได้ผลการทำงานดังนี้
+
+    .. code:: raw
+
+        0
+        1
+        2
+        3
+        4
+
+    จากตัวอย่างข้างต้นนี้แสดงให้เห็นว่าตัวแปร i ในแต่ละรอบนั้นมีค่าเริ่มจาก 0 และจะเพิ่มขึ้นทีละ 1 ไปเรื่อยๆ จนกระทั่งถึง 4 (และเมื่อถึง 5 ก็จะออกจากโครงสร้าง ``for`` )
+
+
+
+    for variable in range(start,stop)
+    ===================================
+
+    พิจารณาการทำงานของโปรแกรม
+
+    .. code:: python
+
+       for i in range(5,10):
+           print(i)
+
+    .. code:: raw
+
+        5
+        6
+        7
+        8
+        9
+
+    จากตัวอย่างข้างต้นนี้แสดงให้เห็นว่าตัวแปร i ในแต่ละรอบนั้นมีค่าเริ่มจาก 5 และจะเพิ่มขึ้นทีละ 1 ไปเรื่อยๆ จนกระทั่งถึง 9 (และเมื่อถึง 10 ก็จะออกจากโครงสร้าง ``for`` )
+
+
+    for variable in range(start,stop,step)
+    ======================================
+
+    พิจารณาการทำงานของโปรแกรม
+
+    .. code:: python
+
+       for i in range(5,15,4):
+           print(i)
+
+    .. code:: raw
+
+        5
+        9
+        13
+
+    จากตัวอย่างข้างต้นนี้แสดงให้เห็นว่าตัวแปร i ในแต่ละรอบนั้นมีค่าเริ่มจาก 5 และจะเพิ่มขึ้นทีละ 4 ไปเรื่อยๆ จนกระทั่งถึง 13 (แต่ตัวถัดไปมีค่าเป็น 13+4 ได้ 17 ซึ่งมีค่ามากกว่าหรือเท่ากับ 15 ไปแล้วโปรแกรมจึงออกจากโครงสร้าง ``for`` )
+environment_id: python3
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'การเขียนโปรแกรมแบบวนซ้ำ 2 : for loop'
+network_grading: false
+problems:
+    p1:
+        type: code
+        name: สามเหลี่ยม
+        header: |
+            ให้เขียนโปรแกรมเพื่อรับเลขจำนวนเต็ม 1  จำนวนที่มีค่ามากกว่าหรือเท่ากับ 0
+            เพื่อแสดงรูปสามเหลี่ยมดังตัวอย่าง
+
+            **INPUT**
+
+            .. code:: raw
+
+                4
+
+            **OUTPUT**
+
+            .. code:: raw
+
+                *
+                **
+                ***
+                ****
+
+            **INPUT**
+
+            .. code:: raw
+
+                3
+
+            **OUTPUT**
+
+            .. code:: raw
+
+                *
+                **
+                ***
+
+
+            **เตือนความทรงจำ**
+
+            str ในภาษาไพทอนสามารถนำไปคูณกับ int เป็นการสร้าง str ที่มีการนำ str มาต่อกันตามจำนวนที่คูณ
+            เช่น
+
+            .. code:: python
+
+                'abc' * 3 -> 'abcabcabc'
+        language: python
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

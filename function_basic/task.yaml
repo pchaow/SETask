@@ -1,0 +1,22 @@
+accessible: false
+author: ''
+categories: []
+contact_url: ''
+context: |-
+    - function definition
+    - module and import
+environment_id: mcq
+environment_parameters: {}
+environment_type: mcq
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: ฟังก์ชันและมอดูล
+network_grading: false
+problems: {}
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
