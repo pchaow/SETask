@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: ''
 categories: []
 contact_url: ''
@@ -243,7 +243,7 @@ problems:
             ทั้งนี้การเขียนโดยใช้สัญลักษณ์ -> เพื่อให้เข้าใจถึง input (parameter หรือ arguments) และ output (return values)  ของฟังก์ชัน
 
 
-        language: ''
+        language: python
         default: ''
 stored_submissions: 0
 submission_limit:
