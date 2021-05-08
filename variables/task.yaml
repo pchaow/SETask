@@ -40,6 +40,20 @@ context: |
 
         x = 15    # redefined กำหนดค่าให้กับตัวแปรเดิมก็ได้
         z = x + y # z -> 35
+
+
+    type hinting
+    =================
+
+    ไพทอนสามารถเขียนโน๊ต (annotation) เพื่ออธิบาย type ของตัวแปรได้ดังนี้
+
+    .. code:: python
+
+        age : int = 10
+        name : str = "John"
+
+
+    *หมายเหตุ* การเขียน type hinting ไม่มีผลต่อการทำงานใดๆ ในภาษาไพทอน แค่ใช้เพื่อเตือนความจำเท่านั้น
 environment_id: python3
 environment_parameters:
     limits:
