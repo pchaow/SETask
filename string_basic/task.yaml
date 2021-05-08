@@ -1,4 +1,20 @@
 accessible: false
+author: ''
+categories: []
+contact_url: ''
+context: ''
+environment_id: mcq
+environment_parameters: {}
 environment_type: mcq
-name: string_basic
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'พื้นฐานการจัดการสตริง : string'
+network_grading: false
 problems: {}
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

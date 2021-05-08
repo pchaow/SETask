@@ -25,11 +25,12 @@ try :
 
     result = []
     testcases = [
-        1,2
+        1
     ]
     for i in testcases :
-        input_text = get_text_from_file(f'testcases/{i}.in')
-        output_text = get_text_from_file(f'testcases/{i}.out')
+        
+        input_text = ""
+        output_text = "4"
         stdout, stderr, retval = run_student_simple("python3 student/student.py",cmd_input=input_text)
         stdout = stdout.strip()
         result.append(RunResult(input_text,output_text,stdout,stderr))
