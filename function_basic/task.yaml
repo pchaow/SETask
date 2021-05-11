@@ -1,0 +1,253 @@
+accessible: true
+author: ''
+categories: []
+contact_url: ''
+context: |+
+    **ตัวแปร ใช้สำหรับนิยามข้อมูล**
+
+    **ฟังก์ชัน ใช้สำหรับนิยามโปรแกรม**
+
+    จากการเขียนโปรแกรมเบื้องต้นที่ผ่านมาเราไม่ได้มีการนิยามฟังก์ชัน เพื่อแทนความหมายของโปรแกรมเหล่านั้น
+    ฟังก์ชันมักถูกสร้างขึ้นจากการที่ส่วนของโปรแกรมนั้นๆ มีการใช้งานซ้ำๆ อยู่บ่อยครั้ง หรือ
+    กระบวนการทำงานมีความซับซ้อน หรือเพื่อให้โปรแกรมของเราอ่านได้ง่ายขึ้น
+
+    โดยสรุปแล้วฟังก์ชันนั้นคือส่วนของโปรแกรมที่ทำงานบางอย่างโดยเฉพาะ โดยอาจมีการรับหรือไม่รับข้อมูลก็ได้ และเมื่อฟังก์ชันทำงานเสร็จสิ้นแล้วฟังก์ชันสามารถคืนผลลัพ์ออกมาหนึ่งหรือมากกว่า หรือไม่คืนค่าผลลัพธ์ออกมาเลยก็ได้
+
+    Define a funciton
+    ========================
+
+    รูปแบบในการสร้างฟังก์ชันนั้นมีรูปแบบดังนี้
+
+
+    .. code:: raw
+
+        def FUNCTION_NAME ([PARAMETER,...]) :
+            STATEMENT(S)
+            [return VALUE(S)]
+
+    เมื่อมีการสร้างฟังก์ชันก็จะต้องมีการเรียกใช้ฟังก์ชัน โดยมีรูปแบบดังนี้
+
+    .. code:: raw
+
+        [RETURN_VALUE(S) =] FUNCTION_NAME([ARGUMENTS,...])
+
+    จากรูปแบบข้างต้นนี้เราสามารถนำมาประยุกต์สร้างและเรียกใช้งานฟังก์ชันได้ดังตัวอย่าง
+
+
+    **Example 1 : เขียนโปรแกรมเพื่อแสดงข้อความ 'hello' ออกทางจอภาพ 3 บรรทัด**
+
+    .. code:: python
+
+        def hello()
+            print("hello")
+
+        #main
+
+        hello()
+        hello()
+        hello()
+
+
+    **Example 2 : เขียนโปรแกรมเพื่อแสดงข้อความ 'hello' ออกทางจอภาพ n บรรทัด**
+
+    .. code:: python
+
+        def hello(n)
+            for i in range(n) :
+                print("hello")
+
+        #main
+
+        n = int(input())
+        hello(n)
+
+
+    **Example 3 : เขียนฟังก์ชันเพื่อการรับค่าข้อมูลนักเรียน**
+
+    .. code:: python
+
+        def read_student() :
+            student_name = input("Name = ")
+            student_age = input("Age = ")
+
+            return student_name, student_age
+
+        #main
+        name,age = read_student()
+        print(name,age)
+        student_data = read_student()
+        print(student_data[0], student_data[1])
+
+
+    **Example 4 : ฟังก์ชันเพื่อการคำนวณเบื้องต้น**
+
+    .. code:: python
+
+        def plus(a,b) :
+            return a+b
+
+        #main
+        x = int(input())
+        y = int(input())
+        z = plus(x,y)
+        print(z)
+
+
+    จากตัวอย่างทั้ง 4 แสดงให้เห็นรูปแบบการใช้งานฟังก์ชันที่ ไม่มีการรับค่า มีการรับค่า ไม่มีการคืนค่า มีการคืนค่า และมีการคืนค่าผลลัพธ์มากกว่า 1 ค่า
+
+
+    function type hinting
+    =========================
+
+    เราสามารถใช้ type hinting เพื่อช่วยในการจดโน๊ต (annotation) สำหรับฟังก์ชัน เพื่อเตือนความจำถึงชนิดข้อมูลของ parameter และ return types ได้ดังตัวอย่าง
+
+    .. code:: python
+
+       def plus(a:float,b:float) -> float :
+           return a+b
+
+
+    *อย่างไรก็ตามการเขียน type hinting ไม่มีผลต่อการทำงานใดๆ*
+
+
+    ทำความเข้าใจสัญลักษณ์และความหมาย
+    =====================================
+
+    ลองพิจารณาสัญลักษณ์ทางตรรกศาสตร์นี้
+
+    .. list-table:: if then
+       :width: 300
+       :widths: 5 5 5
+       :header-rows: 1
+
+       * - P
+         - Q
+         - P -> Q
+       * - T
+         - T
+         - T
+       * - T
+         - F
+         - F
+       * - F
+         - T
+         - T
+       * - F
+         - F
+         - T
+
+    จากตารางข้างต้นเห็นได้ว่า หาก เหตุเป็นจริงแล้วผลเป็นเท็จ แสดงว่าประโยคดังกล่าวถือว่าเป็นเท็จ ดังนั้น เมื่อนำความรู้ดังกล่าวไปพิจาณา ฟังก์ชันที่มีนิยามดังนี้
+
+    .. code:: raw
+
+        f(int) -> int
+        f(x:int) -> 2x + 5
+
+    ฟังก์ชันข้างต้นเห็นได้ว่า เรานิยามฟังก์ชัน f ให้รับค่าเป็นเลขจำนวนเต็มและให้ผลลัพธ์เป็นเลขจำนวนเต็ม
+    และมีรายละเอียดของฟังก์ชันที่อธิบายว่า ให้ค่าที่รับมาแทนด้วยตัวแปร x และผลลัพธ์ของฟังก์ชัน คือการนำ 2 คูณกับ x แล้วนำค่าที่ได้ไปบวกกับ 5
+
+    ดังนั้นเราสามารถเขียนในรูปอีกรูปหนึ่งได้ว่า f :: int -> int คือฟังก์ชัน f นั้นต้องการ int และให้ int เป็นผลลัพธ์ ซึ่งสามารถเขียนค่าความจริงได้ดังตาราง
+
+    .. list-table:: f(int) -> int
+        :width: 300
+        :widths: 5 5 5
+        :header-rows: 1
+
+        * - int (input)
+          - int (output)
+          - f :: int -> int (meaning)
+        * - int
+          - int
+          - T (Correct)
+        * - int
+          - ~int
+          - F (Wrong)
+        * - ~int
+          - int
+          - T (Accidentally Correct, บังเอิญถูกแต่ต้องมีอะไรผิดพลาดแน่ๆ)
+        * - ~int
+          - ~int
+          - T (แน่นอนต้องมันต้องไม่ได้)
+
+
+environment_id: python3
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'ฟังก์ชัน : functions'
+network_grading: false
+problems:
+    p1:
+        type: code
+        name: เครื่องคิดเลขอย่างง่าย
+        header: |+
+            ให้เขียน function ที่มีชื่อว่า calc ที่มีพารามิเตอร์ดังนี้
+
+            1. sign : str () หมายถึง เครื่องหมาย ได้แก่ + - * /
+            2. a : float
+            3. b : float
+
+            เพื่อคำนวณค่า ดังนี้
+
+             - a + b
+             - a - b
+             - a * b
+             - a / b (โดยที่ b != 0)
+
+            จากโจทย์ข้างบนสามารถเขียนเป็นนิยามแบบง่ายๆ ได้ดังนี้
+
+            .. code:: raw
+
+                calc ( str , float, float) -> float          หรือ
+                calc (sign:str, a:float, b:float) -> float   หรือ
+                calc :: str -> float -> float -> float
+
+            จากนิยามนี้เราสามารถวิเคราะห์หาตัวอย่างของปัญหา (instance of problem) ได้ ดังตาราง
+
+            .. list-table:: instance of problems
+               :width: 300
+               :widths: 5 5 5 10
+               :header-rows: 1
+
+               * - str
+                 - float
+                 - float
+                 - calc(str,float,float) -> float
+               * - ``+``
+                 - 5
+                 - 2
+                 - 7.0
+               * - ``-``
+                 - 5
+                 - 2
+                 - 3.0
+               * - ``*``
+                 - -4
+                 - 2
+                 - \-8.0
+               * - ``/``
+                 - 10
+                 - 2
+                 - 5.00
+
+
+
+            ทั้งนี้การเขียนโดยใช้สัญลักษณ์ -> เพื่อให้เข้าใจถึง input (parameter หรือ arguments) และ output (return values)  ของฟังก์ชัน
+
+
+        language: python
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
+...

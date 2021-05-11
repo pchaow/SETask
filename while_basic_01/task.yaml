@@ -1,0 +1,207 @@
+accessible: true
+author: ''
+categories: []
+contact_url: ''
+context: |+
+    ในการแก้ปัญหาบางอย่างเราอาศัยการทำงานแบบทำซ้ำเพื่อแก้ปัญหาหรือหาคำตอบ
+    เช่นในกรณีการประมาณค่ารากที่สองของ x ด้วยวิธีบาบิโลเนี่ยน ซึ่งมีขั้นตอนการทำงานดังนี้
+
+
+       1. เดาค่า :math:`g` ขึ้นมา 1 ค่า
+       2. พิจารณาว่า ถ้า  :math:`g^2 \approx x` ถือว่า g เป็น ``คำตอบ``
+       3. คำนวณ :math:`g'` จากค่าเฉลี่ยระหว่าง :math:`g` และ :math:`\frac{x}{g}`
+
+            .. math::
+
+              g' = \frac{g + \frac{x}{g}}{2}
+
+        4.  ให้ :math:`g` มีค่าเป็น :math:`g'` แล้วกลับไปทำซ้ำข้อ 2
+
+
+    จากขั้นตอนวิธีข้างต้นเมื่อเราคำนวณประมาณค่า รากที่สองของ 25 ด้วยวิธีข้างต้นสามารถทำได้ดังนี้
+
+        1. เดาค่า g 3
+        2. คำนวณค่า g*g ได้ 3*3 = 9 ซึ่งยังไม่ใกล้เคียงกับ 25
+        3. คำนวณค่า g' จะได้ :math:`(9 + \frac{25}{9})/2 = 5.88`
+        4. ให้ g = g' และคำนวณ g*g ได้ 5.88*5.88 = 34.67 ซึ่งยังไม่ใกล้เคียงกับ 25
+        5. คำนวณค่า g' จะได้ :math:`(5.88 + \frac{25}{5.88})/2 = 5.06`
+        6. ให้ g = g' และคำนวณ g*g ได้ 5.06*5.06 = 25.66 ซึ่งยังไม่ใกล้เคียงกับ 25
+        7. คำนวณค่า g' จะได้ :math:`(5.06 + \frac{25}{5.06})/2 = 5.000355`
+        8. ให้ g = g' และคำนวณ g*g ได้ 5.000355*5.000355 = 25.003 ซึ่งมีค่า **ใกล้เคียง** กับ 25 แล้ว จึงบอกว่า 5.00035 เป็นค่ารากที่สองโดยประมาณของ 25
+
+
+    ในการเขียนโปรแกรมข้างต้นนี้ เราสามารถใช้คำสั่ง ``while`` ซึ่งมีโครงสร้างและการทำงานดังต่อไปนี้
+
+    .. code:: python
+
+        while condition :
+
+            statement(s)...
+
+        statement(s) outside
+
+    จากรูปข้างล่างนี้แสดงหลักการทำงานของคำสั่ง ``while`` คือถ้า ``condition`` มีค่าเป็นจริงแล้ว โปรแกรมก็จะลงไปทำในส่วนบล๊อคของ while และเมื่อทำเสร็จสิ้นแล้วโปรแกรมก็จะกลับมาตรวจสอบเงื่อนไข ``condition`` ที่อยู่ตรงคำสั่ง whileอีกครั้งหากยังเป็น ``จริง`` ก็ยังทำตามคำสั่งใน ``while`` และกลับมาตรวจสอบเงื่อนไขเรื่อยๆ แต่หากพบว่า เงื่อนไขเป็น ``เท็จ`` ก็จะถือว่าเป็นการสิ้นสุดการทำงานของคำสั่ง ``while`` และกลับออกมาทำงานคำสั่งถัดไป
+
+
+    .. dot:: png
+       :height: 400
+
+       digraph G {
+          rankdir="TB";
+          splines=false;
+
+          p1 [label="",shape="none"]
+          p2 [label="",shape="none"]
+
+          start [label="Start"];
+          while [label="condition",shape="diamond"];
+          while_statement_1 [label="Statement 1",shape="box"];
+          while_statement_2 [label="Statement 2",shape="box"];
+          while_statement_3 [label="Statement 3",shape="box"] ;
+          outside_statements [label="Statement Outside While",shape="box"];
+
+
+          start -> while;
+          while -> while_statement_1 [label="True"];
+
+
+          while_statement_1 -> while_statement_2;
+          while_statement_2 -> while_statement_3;
+
+          p1 ->while
+          p2:e -> p1:e [arrowhead=none]
+          p2-> while_statement_3 [dir=back,arrowtail=none]
+
+          while -> outside_statements [label="False"];
+
+         {
+             rank=same;p1;while;
+         }
+         {
+             rank=same;p2,while_statement_3;
+         }
+
+       }
+
+    จากขั้นตอนวิธีการหารากที่ 2 แบบบาบิโลเนียนสามารถเขียนเป็นผังงานได้ดังนี้
+
+    .. dot:: png
+       :height: 400
+
+        digraph G {
+            rankdir="TB";
+            splines=false;
+
+            defx [label="read x",shape=parallelogram]
+            guessg [label="g = 3",shape=box]
+            start [label="Start"]
+            stop [label="Stop"]
+            while [shape=diamond,label=<g<sup>2</sup> ≉ x>]
+            newg [shape=box,label=<g = (g+x/g)/2>]
+            print [shape=parallelogram,label="Print g"]
+
+
+            p1 [label="",shape=none]
+            p2 [label="",shape=none]
+
+            start -> defx
+            defx -> guessg
+            guessg -> while
+            while -> newg [label=" True"]
+
+
+            p1 -> while
+            p1:e -> p2:e [arrowhead=none]
+            p2 -> newg [arrowhead=none]
+
+            while -> print [label="False"]
+            print ->stop
+
+            {
+                rank=same; while;p1;print
+            }
+            {
+                rank=same; p2;newg
+            }
+        }
+
+
+    ดังนั้นจากตัวอย่างข้างต้นนี้สามารถเขียนเป็นภาษาไพทอนได้ดังนี้
+
+
+    .. code:: python
+
+        x = int(input("X = "))
+        g = 3
+        while abs(x - g**2 ) > 0.000000001 :
+            g = (g + x/g)/2
+
+        print(f"Approximate Square root of {x} is {g}")
+
+    ซึ่งเมื่อรันโปรแกรมจะได้ผลลัพธ์ดังนี้
+
+    .. code:: raw
+
+        X = 25
+        Approximate Square root of 25 is 5.0
+
+
+environment_id: python3
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'การเขียนโปรแกรมแบบวนซ้ำ : while loop'
+network_grading: false
+problems:
+    p1:
+        type: code
+        name: การหาค่า หรม
+        header: |
+            ``หรม`` (Great Common Divisor, GCD) คือ จำนวนเต็ม “ที่มากที่สุด” ที่สามารถนําไปหารจำนวนตั้งแต่สองจำนวนขึ้นไปพร้อมกันได้ลงตัวทั้งหมด
+
+            ซึ่งเราสามารถใช้ขั้นตอนวิธีของยูคลิด ``(Euclidean algorithm)`` เพื่อหาค่า ``หรม`` ได้ โดยศึกษารายละเอียดหรือวิธีการได้จากคลิบด้านล่าง
+
+            .. raw:: html
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AJn843kplDw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+            **คำสั่ง**  ให้เขียนโปรแกรมเพื่ออ่านค่า a,b ซึ่งเป็นเลขจำนวนเต็ม จากนั้นให้แสดงค่า หรม ของ a,b ออกทางจอภาพ
+
+            **INPUT** มี 2 บรรทัด
+
+              บรรทัดที่ 1 : เลขจำนวนเต็ม 1 จำนวน (a)
+              บรรทัดที่ 2 : เลขจำนวนเต็ม 1 จำนวน (b)
+
+
+            **OUTPUT** มี 1 บรรทัด
+
+              บรรทัดที่ 1 : เลขจำนวนเต็ม 1 จำนวน (หรมของ a,b)
+
+            **Example**
+                +-------+--------+
+                | INPUT | OUTPUT |
+                +=======+========+
+                | 12    | 6      |
+                |       |        |
+                | 30    |        |
+                +-------+--------+
+                | 594   | 54     |
+                |       |        |
+                | 216   |        |
+                +-------+--------+
+        language: python
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

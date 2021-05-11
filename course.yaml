@@ -22,6 +22,9 @@ dispenser_data:
     rank: 0
     tasks_list:
         basic_data_types: 0
+        file_basic: 13
+        for_basic_01: 11
+        function_basic: 12
         if_basic: 6
         if_basic2: 7
         if_basic3: 8
@@ -31,10 +34,13 @@ dispenser_data:
         print_basic: 3
         type_conversion_basic: 5
         variables: 2
-    title: เนื้อหาพื้นฐาน
+        while_basic_01: 10
+    title: Basic Concept
 -   config:
         closed: false
     id: ''
     rank: 1
-    tasks_list: {}
-    title: แบบฝึกหัด
+    tasks_list:
+        list_basic_01: 1
+        string_basic: 0
+    title: References
