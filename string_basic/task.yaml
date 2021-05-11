@@ -2,7 +2,125 @@ accessible: false
 author: ''
 categories: []
 contact_url: ''
-context: ''
+context: |+
+    ``สตริง`` (str, string) เป็นชนิดข้อมูลที่ใช้สำหรับการอธิบายข้อมูลที่เป็นข้อความ (หรือ ตัวอักษรที่เรียงต่อกัน)
+    โดยในภาษาไพทอน สตริงจะมีเครื่องหมาย " หรือ ' ครอบไว้
+
+    *หมายเหตุ* ในภาษาไพทอนนั้นสตริงไม่สามารถแก้ไขได้ ทำได้เพียงสร้างสตริงใหม่เท่านั้น!!!
+
+    **Example**
+
+    .. code:: python
+
+        print("Hello")
+        print('Hello')
+
+    แน่นอนว่า ``สตริง`` นั้นเป็นข้อมูลย่อมสามารถกำหนดค่า (นิยามค่า) ให้กับตัวแปรได้
+
+    .. code:: python
+
+       x = "John Doe"
+       y = '14'
+
+       print(x)
+       print(y)
+
+    บางครั้งเราอาจจะต้องการสร้างสตริงที่มีหลายบรรทัดในครั้งเดียว ไพทอนได้มีการใช้เครื่องหมาย tripple quote (''' หรือ """) ครอบสตริงไว้เพื่อความสะดวก
+
+    .. code:: python
+
+        address = """คณะเทคโนโลยีสารสนเทศและการสื่อสาร
+        มหาวิทยาลัยพะเยา 19 ม.2 ต.แม่กา อ.เมือง
+        จ.พะเยา 56000"""
+
+
+
+    เข้าถึงข้อมูลในสตริง
+    -------------------------
+
+    เราสามารถเข้าถึงตัวอักษร (สมาชิก) แต่ละตัวในสตริงได้ โดยการใช้เครื่องหมาย [] ที่มีการระบุตำแหน่งของตัวอักษร (index) โดยเริ่มจากตำแหน่งที่ 0 เป็นต้นไป
+
+    .. code:: python
+
+        name = "John Doe"
+        print(name[0]) # J
+        print(name[7]) # e
+
+
+    แต่ในกรณีที่เราต้องการเข้าถึงตัวอักษณทุกตัวตั้งแต่ตัวแรกจนถึงตัวสุดท้าย เราสามารถใช้คำสั่ง for ได้ดังตัวอย่าง
+
+    .. code:: python
+
+        name = "John Doe"
+        for i in name :
+            print(i)
+
+
+    การนับจำนวนตัวอักษร (ความยาว)
+    -------------------------------------
+
+    เราสามารถใช้ฟังก์ชัน len โดยที่ ``len(obj) -> int`` ซึ่งเป็นการคำนวร (คืนค่า) ความยาวของ ``obj`` (ในกรณีนี้คือ str ใดๆ) ออกมา ดังตัวอย่าง
+
+
+    .. code:: python
+
+        name = "John Doe"
+        name_length = len(name)
+
+        for i in range(name_length) :
+            print(name[i])
+
+
+    การเปรียบเทียบสตริง
+    -------------------------
+
+    สตริงสามารถเปรียบเทียบได้ โดยใช้เครื่องหมาย ``\<`` ``<=`` ``\>`` ``>=`` ``!=`` ``==`` ได้
+
+    .. code:: python
+
+       a = "Ant"
+       b = 'apple'
+
+       print(a>b)  # False
+       print('A' < 'a') # True
+       print('A' == 'a') # False
+
+
+    นอกจากนี้เรายังสามารถเปรียบเทียบหรือทดสอบสตริงได้จากการใช้คำสั่ง in และ not in
+    ดังตัวอย่าง
+
+    .. code:: python
+
+
+        words = "Captain America was born in USA."
+        print("was" in words) # True
+        print("Thailand" not in words) #True
+
+
+
+
+
+
+    **ตัวอย่าง** โปรแกรมนับจำนวนตัวอักษรที่เป็นสระในภาษาอังกฤษ
+
+
+    .. code:: python
+
+         name = "John Doe"
+         vowelCount = 0
+         vowel = 'aeiouAEIOU'
+
+         for i in name :
+             if i in vowel :
+                 vowelCount += 1
+
+         print(vowelCount)
+
+
+
+
+
+
 environment_id: mcq
 environment_parameters: {}
 environment_type: mcq
@@ -10,7 +128,7 @@ evaluate: best
 file: ''
 groups: false
 input_random: '0'
-name: 'พื้นฐานการจัดการสตริง : string'
+name: 'พื้นฐานการใช้งานสตริง : string'
 network_grading: false
 problems: {}
 stored_submissions: 0
@@ -18,3 +136,4 @@ submission_limit:
     amount: -1
     period: -1
 weight: 1.0
+...

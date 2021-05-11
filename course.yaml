@@ -33,14 +33,15 @@ dispenser_data:
         input_basic: 4
         operators: 1
         print_basic: 3
-        string_basic: 14
         type_conversion_basic: 5
         variables: 2
         while_basic_01: 10
-    title: เนื้อหาพื้นฐาน
+    title: Basic Concept
 -   config:
         closed: false
     id: ''
     rank: 1
-    tasks_list: {}
-    title: แบบฝึกหัด
+    tasks_list:
+        list_basic_01: 1
+        string_basic: 0
+    title: References
