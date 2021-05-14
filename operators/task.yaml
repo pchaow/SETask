@@ -3,7 +3,7 @@ author: ''
 categories: []
 contact_url: ''
 context: |+
-    ตัวดำเนินการถูกแบ่งออกเป็น 2 ประเภทอย่างง่ายๆ คือ
+    ตัวดำเนินการ (Operator) ถูกแบ่งออกเป็น 2 ประเภทอย่างง่ายๆ คือ
 
     1. Unary Operator หมายถึงตัวดำเนินการที่มีการทำงานกับค่าเพียง 1 ค่า เช่น - + not ดังตัวอย่าง ``-1`` ``+52`` หรือ ``not True`` เป็นต้น
     2. Binary Operator หมายถึงตัวดำเนินการที่ทำงานกับค่า 2 ค่า เช่น + - * / % ** เช่น 5+2 10**2 เป็นต้น
@@ -20,15 +20,18 @@ context: |+
     7. Identity Operators
 
 
+    ``ตัวถูกดำเนินการ`` หรือ ``Operand`` คือวัตถุ (ค่า หรือข้อมูล) ที่ถูกดำเนินการ เช่น
+
+        - +1 มีตัวดำเนินการแบบ Unary Operator (+) และมีตัวถูกดำเนินการคือ 1
+        - 5+2 มีตัวดำเนินการแบบ Binary Operator (+) และมีตัวถูกดำเนินการ คือ 5 และ 2
+
+
     สามารถศึกษารายละเอียดเพิ่มเติมได้จากลิงค์ https://www.tutorialspoint.com/python3/python_basic_operators.htm
 
 
     คำสั่งและนิพจน์ (Statement and Expression)
     ===============================================
 
-    A statement is an instruction that the Python interpreter can execute. We have only seen the assignment statement so far. Some other kinds of statements that we’ll see shortly are while statements, for statements, if statements, and import statements. (There are other kinds too!)
-
-    An expression is a combination of values, variables, operators, and calls to functions. Expressions need to be evaluated. If you ask Python to print an expression, the interpreter evaluates the expression and displays the result.
 
     ``คำสั่ง`` หมายถึง คำสั่งที่บอกให้ไพทอนทำงาน เช่น การกำหนดค่า การทำซ้ำ คำสั่งแบบทางเลือก คำสั่งการนำไลบรารี่เข้ามาใช้งาน ฯลฯ ซึ่งจะได้พบเจอในเนื้อหาถัดๆ ไป
 

@@ -1,15 +1,21 @@
 accessible: true
 name: '[PYTHON101] ภาษาไพทอนพื้นฐาน'
-description: คอร์สตัวอย่างโจทย์สำหรับการอบรม
+description: |
+    คอร์สตัวอย่างโจทย์สำหรับการอบรม
+
+    อบรมวันที่ 15 พ.ค. 2564 ลิงค์อบรมซูม
+    https://zoom.us/j/93508689206
 admins: []
-tutors: []
+tutors:
+- pongv
 groups_student_choice: false
 allow_unregister: true
 allow_preview: false
 registration: true
 registration_password: null
 registration_ac: null
-registration_ac_list: []
+registration_ac_list:
+- '    '
 is_lti: false
 lti_url: ''
 lti_keys: {}
