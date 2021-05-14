@@ -31,6 +31,7 @@ dispenser_data:
         if_basic3: 8
         if_basic4: 9
         input_basic: 4
+        list_basic_01: 14
         operators: 1
         print_basic: 3
         type_conversion_basic: 5
@@ -42,6 +43,5 @@ dispenser_data:
     id: ''
     rank: 1
     tasks_list:
-        list_basic_01: 1
         string_basic: 0
     title: References
