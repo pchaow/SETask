@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: ''
 categories: []
 contact_url: ''
@@ -194,7 +194,123 @@ groups: false
 input_random: '0'
 name: ลิสต์และการใช้งานเบื้องต้น
 network_grading: false
-problems: {}
+problems:
+    p1:
+        type: multiple_choice
+        name: การเข้าถึงสมาชิกในลิสต์
+        header: |-
+            กำหนดให้ L = [6,7,1,2,0]
+
+            ให้เลือกนิพจน์ที่ให้ผลลัพธ์เป็นสมาชิกตัวแรกและตัวสุดท้ายของลิสต์ตามลำดับ
+        multiple: true
+        limit: 0
+        choices:
+        -   text: L[0], L[4]
+            valid: true
+        -   text: L[0], L[-1]
+            valid: true
+        -   text: L[-5], L[-1]
+            valid: true
+        -   text: L[len(L)-5], L[len(L)-1]
+            valid: true
+        -   text: L[1], L[5]
+    p2:
+        type: multiple_choice
+        name: ลองรันคำสั่งข้างล่างนี้แล้วตอบคำถาม
+        header: |-
+            aList = [1, 2, 3, 4, 5, 6, 7]
+
+            pow2 =  [2 * x for x in aList]
+
+            print(pow2)
+
+            ผลลัพธ์ของโปรแกรมคือข้อใด
+        limit: 0
+        choices:
+        -   text: ' [2, 4, 6, 8, 10, 12, 14]'
+            valid: true
+        -   text: '[2, 4, 8, 16, 32, 64, 128]'
+    p3:
+        type: multiple_choice
+        name: ผลลัพธ์ของคำสั่งด้านล่างคืออะไร
+        header: |
+            list1 = ['xyz', 'zara', 'PYnative']
+
+            print (max(list1))
+        limit: 0
+        choices:
+        -   text: PYnative
+        -   text: zara
+            valid: true
+    p4:
+        type: multiple_choice
+        name: ให้เลือกคำตอบที่ถูกทุกคำตอบ
+        header: |-
+            listOne  =  ['a', 'b', 'c', 'd']
+
+            listTwo =  ['e', 'f', 'g']
+
+            นิพจน์ในข้อใดให้ผลลัพธ์เป็นลิสต์ 2 อันที่เชื่อมกัน
+        multiple: true
+        limit: 0
+        choices:
+        -   text: newList = listOne + listTwo
+            valid: true
+        -   text: newList = extend(listOne, listTwo)
+        -   text: newList = listOne.extend(listTwo)
+        -   text: newList.extend(listOne, listTwo)
+    p5:
+        type: multiple_choice
+        name: ผลลัพธ์ในการทำงานของโปรแกรมด้านล่างคือข้อใด
+        header: |-
+            sampleList = [10, 20, 30, 40, 50]
+
+            sampleList.append(60)
+
+            print(sampleList)
+
+            sampleList.append(60)
+
+            print(sampleList)
+        limit: 0
+        choices:
+        -   text: |
+                [10, 20, 30, 40, 50, 60]
+
+                [10, 20, 30, 40, 50, 60]
+        -   text: |-
+                [10, 20, 30, 40, 50, 60]
+
+                [10, 20, 30, 40, 50, 60, 60]
+            valid: true
+    p6:
+        type: multiple_choice
+        name: ผลลัพธ์ของโปรแกรมด้านล่างคือข้อใด
+        header: |-
+            l = [None] * 10
+
+            print(len(l))
+        limit: 0
+        choices:
+        -   text: '10'
+            valid: true
+        -   text: '0'
+        -   text: Syntax Error
+    p7:
+        type: multiple_choice
+        name: จงเลือกคำสั่งที่เป็นการคัดลอกลิสต์
+        header: |+
+            aList = ['a', 'b', 'c', 'd']
+
+        multiple: true
+        limit: 0
+        choices:
+        -   text: newList = copy(aList)
+        -   text: newList = aList.copy()
+            valid: true
+        -   text: newList.copy(aList)
+        -   text: newList = list(aList)
+            valid: true
 stored_submissions: 0
 submission_limit:
     amount: -1
