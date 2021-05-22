@@ -3,8 +3,15 @@ author: ''
 categories: []
 contact_url: ''
 context: |+
+    .. raw:: html
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/AXIkNKGzzUw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    เนื้อหา
+    =========================
     วัตถุ (Object) หรือ ข้อมูล (Data) คือหน่วยที่เล็กที่สุดที่ไพทอนสามารถเข้าใจได้ เมื่อเราพิมพ์ อะไรลงไปใน ``idle`` ไพทอนจะสามารถตอบสิ่งนั้นออกมาได้
-    แต่ถ้าสิ่งที่เราพิมพืลงไปไพทอนไม่สามารถเข้าใจได้ ไพทอนจะแจ้งข้อผิดพลาดออกมา
+    แต่ถ้าสิ่งที่เราพิมพ์ลงไปไพทอนไม่สามารถเข้าใจได้ ไพทอนจะแจ้งข้อผิดพลาดออกมา
 
     ภาษาไพทอนมีชนิดข้อมูลพื้นฐาน 5 ชนิดได้แก่
 

@@ -188,7 +188,7 @@ problems:
     p1:
         type: code
         name: เครื่องคิดเลขอย่างง่าย
-        header: |+
+        header: |
             ให้เขียน function ที่มีชื่อว่า calc ที่มีพารามิเตอร์ดังนี้
 
             1. sign : str () หมายถึง เครื่องหมาย ได้แก่ + - * /
@@ -243,6 +243,7 @@ problems:
             ทั้งนี้การเขียนโดยใช้สัญลักษณ์ -> เพื่อให้เข้าใจถึง input (parameter หรือ arguments) และ output (return values)  ของฟังก์ชัน
 
 
+            **หมายเหตุ ข้อนี้ควรเขียนแค่ฟังก์ชันเท่านั้น ไม่ควรเขียนอะไรเพิ่มเติมนอกเหนือจากฟังก์ชันที่ระบุไว้ในโจทย์**
         language: python
         default: ''
 stored_submissions: 0
@@ -250,4 +251,3 @@ submission_limit:
     amount: -1
     period: -1
 weight: 1.0
-...

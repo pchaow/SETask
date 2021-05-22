@@ -1,0 +1,50 @@
+accessible: true
+author: ''
+categories: []
+contact_url: ''
+context: |-
+    .. raw:: html
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bfXVYbtog0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    เครื่องมือที่ใช้ในการเขียนโปรแกรมเบื้องต้น
+    =======================================================
+
+    .. raw:: html
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Jguh2KkeB_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+    คลิบอบรมย้อนหลัง (ยังไม่ได้ตัดต่อ)
+    =============================================
+
+
+    .. raw:: html
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sONpcWmLZuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+environment_id: mcq
+environment_parameters: {}
+environment_type: mcq
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: แนะนำหลักสูตร
+network_grading: false
+problems:
+    confirm:
+        type: multiple_choice
+        name: ยืนยันว่าได้ดูคลิบแล้ว
+        header: ''
+        limit: 0
+        choices:
+        -   text: ดูจบแล้ว
+            valid: true
+        -   text: ยังดูไม่จบ
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 0.0

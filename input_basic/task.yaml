@@ -65,7 +65,7 @@ problems:
         header: |-
             เขียนโปรแกรมเพื่อรับค่า ชื่อ และ ประเทศ จากนั้นให้แสดงข้อความ ตามรูปแบบด้านล่าง
 
-            My name is <yourname>. I come from <country>
+            My name is <yourname>. I came from <country>
 
             โดยโปรแกรมจะต้องทำงานตามตัวอย่างต่อไปนี้
 

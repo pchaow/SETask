@@ -1,11 +1,19 @@
 accessible: true
 name: '[PYTHON101] ภาษาไพทอนพื้นฐาน'
-description: |
+description: |-
     คอร์สตัวอย่างโจทย์สำหรับการอบรม
 
-    อบรมวันที่ 15 พ.ค. 2564 ลิงค์อบรมซูม
-    https://zoom.us/j/93508689206
-admins: []
+    ลิงค์อบรมผ่าน application zoom
+
+    วันที่ 22 พ.ค. 2564 เวลา 13.00 - 16.00น.
+
+    https://zoom.us/j/92236789698
+
+
+    เว็บสำหรับเขียนไพทอน
+    https://replit.com/
+admins:
+- chaow
 tutors:
 - pongv
 groups_student_choice: false
@@ -15,7 +23,7 @@ registration: true
 registration_password: null
 registration_ac: null
 registration_ac_list:
-- '    '
+- '              '
 is_lti: false
 lti_url: ''
 lti_keys: {}
@@ -24,8 +32,15 @@ task_dispenser: toc
 dispenser_data:
 -   config:
         closed: false
-    id: tasks-list
+    id: introduction
     rank: 0
+    tasks_list:
+        course_introduction: 0
+    title: Introduction
+-   config:
+        closed: false
+    id: tasks-list
+    rank: 1
     tasks_list:
         basic_data_types: 0
         file_basic: 13
@@ -44,9 +59,9 @@ dispenser_data:
         while_basic_01: 10
     title: Basic Concept
 -   config:
-        closed: false
+        closed: true
     id: ''
-    rank: 1
+    rank: 2
     tasks_list:
         string_basic: 0
     title: References
